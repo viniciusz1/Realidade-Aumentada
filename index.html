@@ -21,17 +21,11 @@
       vr-mode-ui="enabled: false"
       arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix"
     >
+      <a-assets>
+        <img id="my-image" src="./assets/pinguim-de-barbicha2.webp" />
+      </a-assets>
+      <a-image src="#my-image"></a-image>
       <a-entity camera>
-        <a-image
-          src="./assets/pinguim-de-barbicha2.webp"
-          width="3"
-          height="3"
-          rotation="-90 0 0"
-          position="0 0 -1.5 -5"
-          scale="2 2 2 2"
-          transparent
-        >
-        </a-image>
         <a-marker
           class="game-marker"
           id="marker1"
@@ -54,7 +48,7 @@
       </a-entity>
     </a-scene>
     <script>
-      console.log("oi")
+      console.log("sim");
     </script>
   </body>
 </html>
