@@ -8,7 +8,7 @@
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
     <title>Easter Hunt!</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script
       type="text/javascript"
       src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"
@@ -16,39 +16,30 @@
   </head>
 
   <body style="margin: 0px; overflow: hidden; font-family: Monospace">
-    <a-scene
-      embedded
-      vr-mode-ui="enabled: false"
-      arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix"
-    >
+    <a-scene>
       <a-assets>
-        <img id="my-image" src="./assets/pinguim-de-barbicha2.webp" />
+        <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg" />
+        <img
+          id="skyTexture"
+          src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"
+        />
+        <img
+          id="groundTexture"
+          src="https://cdn.aframe.io/a-painter/images/floor.jpg"
+        />
       </a-assets>
-      <a-image src="#my-image"></a-image>
-      <a-entity camera>
-        <a-marker
-          class="game-marker"
-          id="marker1"
-          type="barcode"
-          data-code="1"
-          value="1"
-          registerevents="true"
-        >
-          <a-image
-            src="./dracula.png"
-            width="3"
-            height="3"
-            rotation="-90 0 0"
-            position="0 0 -1.5 -5"
-            scale="2 2 2 2"
-            transparent
-          >
-          </a-image>
-        </a-marker>
-      </a-entity>
+
+      <a-box
+        src="#boxTexture"
+        position="0 2 -5"
+        rotation="0 45 45"
+        scale="2 2 2"
+      ></a-box>
+
+      <a-sky src="#skyTexture"></a-sky>
+
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light>
     </a-scene>
-    <script>
-      console.log("sim");
-    </script>
   </body>
 </html>
